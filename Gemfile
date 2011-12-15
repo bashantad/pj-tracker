@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -25,7 +26,14 @@ gem "nifty-generators", :group => :development
 
 # Use unicorn as the web server
 # gem 'unicorn'
-
+group :test, :development do 
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-doc'
+ # gem 'ruby-debug19' ,:require =>'ruby-debug'
+  #gem "ruby-debug-base19", "0.11.23", :require => nil
+  
+end
 # Deploy with Capistrano
 # gem 'capistrano'
 
@@ -33,6 +41,16 @@ gem "nifty-generators", :group => :development
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
-  # Pretty printed test output
-  gem 'turn', '0.8.2', :require => false
+ # gem 'cucumber-rails'
+ 
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'selenium'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'valid_attribute'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'turn', '~> 0.8.3', :require => false
 end
