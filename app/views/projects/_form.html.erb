@@ -36,7 +36,7 @@
       <% @users = User.all %>
       <% @users.each do |member| %>
       <ul>
-        <li><%= check_box_tag 'project[user_ids][]', member.id %> <%= member.email%></li>
+		<li><%= check_box_tag 'project[user_ids][]', member.id %> <%= member.email%></li>
       </ul>
       <% end %>
    </div>

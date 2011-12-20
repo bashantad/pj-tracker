@@ -4,7 +4,7 @@
     <td><%= task.body %></td>
     <td><%= user.email %></td>
     <td><%= task.status %></td>
-    <td><%= link_to 'Delete Task', "#" %> </td>
+    <td><%= link_to 'Delete Task', project_task_path(@project,task) , :method => :delete %> </td>
   </tr>
 
 

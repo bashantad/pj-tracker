@@ -11,8 +11,13 @@ class TasksController < ApplicationController
     end
   end
   def destroy
-    
-  end
+    @task = Task.find(params[:id])
+	@task.destroy
+	respond_to do |format|
+        flash[:alert] = "Task Deleted"
+        format.html { redirect_to project_path(@project) }
+      end
+	end
   private 
   def find_project
     @project = Project.find(params[:project_id])
